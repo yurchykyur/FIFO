@@ -16,9 +16,16 @@ The idea of creating an application arose as a result of maintaining an excel fi
 - [ ] Creating a login page
 - [ ] Creating a registration page
 - [ ] Creating a home page
+- [ ] Creating a page to display information according to the selected broker
+- [ ] Creation of a component displaying detailed information on a market asset
+- [ ] Сreating a modal window to sell a market asset
+- [ ] Сreating a modal window to buy a market asset
+- [ ] Create a page - Create a report
+- [ ] Create a page - Useful links
+- [ ] Create a page - normative documents
 
 2. Backend part
-
+- [ ] Develop a work plan
 
 
 
