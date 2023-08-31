@@ -11,7 +11,7 @@ The idea of creating an application arose as a result of maintaining an excel fi
 
 1. Front-end part
 - [ ] Prepare a site template in figma
-- [ ] Create a repository
+- [x] Create a repository
 - [ ] Create routing
 - [ ] Creating a login page
 - [ ] Creating a registration page
