@@ -10,7 +10,7 @@ The idea of creating an application arose as a result of maintaining an excel fi
 ## Plan of work
 
 1. Front-end part
-- [ ] Prepare a site template in figma
+- [x] Prepare a site template in figma (During development, refinements will be required)
 - [x] Create a repository
 - [ ] Create routing
 - [ ] Creating a login page
