@@ -7,6 +7,10 @@ The FIFO calculation method is the basis for creating the report. FIFO - first b
 
 The idea of creating an application arose as a result of maintaining an excel file in which I recorded trade transactions and based on which I created statements for the tax service for the annual tax report
 
+Who will be the first user? - I will.
+
+Estimated life cycle - 40 years.
+
 ## Plan of work
 
 1. Front-end part
