@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/FIFO/static/css/main.7acaea2f.css",
-    "main.js": "/FIFO/static/js/main.07d3183d.js",
+    "main.js": "/FIFO/static/js/main.21ae06c5.js",
     "index.html": "/FIFO/index.html",
     "main.7acaea2f.css.map": "/FIFO/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/FIFO/static/js/main.07d3183d.js.map"
+    "main.21ae06c5.js.map": "/FIFO/static/js/main.21ae06c5.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/js/main.21ae06c5.js"
   ]
 }
