@@ -3,17 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <div>
       React homework template
       <Link to="/">Home</Link>
       <Link to="/login">Login</Link>
