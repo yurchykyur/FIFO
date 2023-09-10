@@ -146,6 +146,7 @@ function DrawerMUI(props) {
             height: '80vh',
             background: '#ddcece',
             borderRadius: 2,
+            overflow: 'auto',
           }}
         >
           <BrokerInformation />
