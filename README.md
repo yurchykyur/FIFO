@@ -16,16 +16,18 @@ Estimated life cycle - 40 years.
 1. Front-end part
 - [x] Prepare a site template in figma (During development, refinements will be required)
 - [x] Create a repository
-- [x] Create routing (was created as open routes)
-- [ ] Create Layout
-- [ ] Creating a login page
-- [ ] Creating a registration page
+- [ ] Create routing (was created as open routes)
+    - - [x] was created as open routes
+      - [ ] create private routes
+- [x] Create Layout
+- [x] Creating a login page
+- [x] Creating a registration page
 - [ ] Creating a home page
 - [ ] Creating a page to display information according to the selected broker
 - [ ] Creation of a component displaying detailed information on a market asset
     - вирішити задачу маленького контейнеру для відображення інформації щодо ресурсу - можливо використати інший підхід - **Popper** / **Popover** ?
-- [ ] Сreating a modal window to sell a market asset
-- [ ] Сreating a modal window to buy a market asset
+- [ ] Сreating a page to sell a market asset
+- [ ] Сreating a page to buy a market asset
 - [ ] Create a page - Create a report
 - [ ] Create a page - Useful links
 - [ ] Create a page - Normative documents
