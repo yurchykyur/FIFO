@@ -23,7 +23,7 @@ import { drawerWidth } from 'constants/drawer';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import ListItemText from '@mui/material/ListItemText';
 
-const isLoggedIn = true;
+const isLoggedIn = false;
 
 // ['Сформувати звіт', 'Корисні відео', 'Нормативи']
 const arrLinks = ['/generate-report', '/usefull-material', '/normative'];
@@ -40,39 +40,37 @@ function DrawerMUI(props) {
     <div>
       <Toolbar />
       <Toolbar />
-      <nav>
-        <Broker
-          nestedList={{
-            primaryTitle: 'Брокер',
-            nestedItems: ['Freedom Finance', 'Interactive Brokers'],
-            nestedLinks: ['/freedom-finance', '/interactive-brokers'],
-          }}
-        />
+      <Broker
+        nestedList={{
+          primaryTitle: 'Брокер',
+          nestedItems: ['Freedom Finance', 'Interactive Brokers'],
+          nestedLinks: ['/freedom-finance', '/interactive-brokers'],
+        }}
+      />
 
-        <Operations
-          nestedList={{
-            primaryTitle: 'Операції',
-            nestedItems: ['Купити', 'Продати'],
-            nestedLinks: ['/buy', '/sell'],
-          }}
-        />
-        <Divider />
-        <List>
-          {['Сформувати звіт', 'Корисні відео', 'Нормативи'].map(
-            (text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton component={RouterNavLink} to={arrLinks[index]}>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
+      <Operations
+        nestedList={{
+          primaryTitle: 'Операції',
+          nestedItems: ['Купити', 'Продати'],
+          nestedLinks: ['/buy', '/sell'],
+        }}
+      />
+      <Divider />
+      <List>
+        {['Сформувати звіт', 'Корисні відео', 'Нормативи'].map(
+          (text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton component={RouterNavLink} to={arrLinks[index]}>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
 
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            )
-          )}
-        </List>
-      </nav>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          )
+        )}
+      </List>
     </div>
   );
 
@@ -87,15 +85,17 @@ function DrawerMUI(props) {
         sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { lg: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
+          {isLoggedIn && (
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { lg: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
 
           <ContentToolbarForDrawer isLoggedIn={isLoggedIn} />
         </Toolbar>
