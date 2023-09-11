@@ -7,6 +7,8 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Choose theme'];
 
@@ -55,8 +57,8 @@ function ContentToolbarForDrawer() {
       <Typography
         variant="h6"
         noWrap
-        component="a"
-        href="/"
+        component={RouterLink}
+       to="/"
         sx={{
           mr: 10,
           display: { xs: 'none', md: 'flex' },
@@ -72,8 +74,8 @@ function ContentToolbarForDrawer() {
       <Typography
         variant="h5"
         noWrap
-        component="a"
-        href="/"
+        component={RouterLink}
+       to="/"
         sx={{
           mr: 2,
           display: { xs: 'flex', md: 'none' },

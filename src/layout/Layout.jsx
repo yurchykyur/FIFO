@@ -5,9 +5,10 @@ import Box from '@mui/material/Box';
 
 import ResponsiveDrawer from 'components/Drawer';
 import AppBarNotLogged from 'components/Drawer/AppBarNotLogged';
+import Footer from 'components/Footer';
 
 export default function Layout() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return (
     <div>
       {!isLoggedIn && (
@@ -27,6 +28,7 @@ export default function Layout() {
           </Suspense>
         </ResponsiveDrawer>
       )}
+      <Footer />
     </div>
   );
 }

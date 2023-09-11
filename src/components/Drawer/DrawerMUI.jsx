@@ -11,7 +11,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,8 +18,14 @@ import ContentToolbarForDrawer from './ToolbarForDrawer';
 import Broker from './Brokers';
 import Operations from './Operations';
 import BrokerInformation from 'components/BrokerInformation';
+import { drawerWidth } from 'constants/drawer';
 
-const drawerWidth = 240;
+import { NavLink as RouterNavLink } from 'react-router-dom';
+import ListItemText from '@mui/material/ListItemText';
+
+
+// ['Сформувати звіт', 'Корисні відео', 'Нормативи']
+const arrLinks = ['/generate-report','/usefull-material','/normative' ]
 
 function DrawerMUI(props) {
   const { window, children } = props;
@@ -34,11 +39,12 @@ function DrawerMUI(props) {
     <div>
       <Toolbar />
       <Toolbar />
-
+<nav>
       <Broker
         nestedList={{
           primaryTitle: 'Брокер',
           nestedItems: ['Freedom Finance', 'Interactive Brokers'],
+          nestedLinks: ['/freedom-finance', '/interactive-brokers']
         }}
       />
 
@@ -46,6 +52,8 @@ function DrawerMUI(props) {
         nestedList={{
           primaryTitle: 'Операції',
           nestedItems: ['Купити', 'Продати'],
+          nestedLinks: ['/buy', '/sell']
+
         }}
       />
       <Divider />
@@ -53,16 +61,19 @@ function DrawerMUI(props) {
         {['Сформувати звіт', 'Корисні відео', 'Нормативи'].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
-              <ListItemButton>
+              <ListItemButton component={RouterNavLink}
+                        to={arrLinks[index]}>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                 
+                        <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
           )
         )}
       </List>
+      </nav>
     </div>
   );
 
@@ -82,7 +93,7 @@ function DrawerMUI(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { lg: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
@@ -92,7 +103,7 @@ function DrawerMUI(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { lg: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -105,7 +116,7 @@ function DrawerMUI(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', lg: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -117,7 +128,7 @@ function DrawerMUI(props) {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', lg: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -133,7 +144,7 @@ function DrawerMUI(props) {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          width: { lg: `calc(100% - ${drawerWidth}px)` },
         }}
       >
         <Toolbar />
@@ -142,7 +153,7 @@ function DrawerMUI(props) {
           sx={{
             flexGrow: 1,
             p: 3,
-            width: { sm: `calc(100% - ${drawerWidth}px - 32 px)` },
+            width: { lg: `calc(100% - ${drawerWidth}px - 32 px)` },
             height: '80vh',
             background: '#ddcece',
             borderRadius: 2,
