@@ -23,11 +23,13 @@ Estimated life cycle - 40 years.
 - [ ] Creating a home page
 - [ ] Creating a page to display information according to the selected broker
 - [ ] Creation of a component displaying detailed information on a market asset
+    - вирішити задачу маленького контейнеру для відображення інформації щодо ресурсу - можливо використати інший підхід - **Popper** / **Popover** ?
 - [ ] Сreating a modal window to sell a market asset
 - [ ] Сreating a modal window to buy a market asset
 - [ ] Create a page - Create a report
 - [ ] Create a page - Useful links
 - [ ] Create a page - Normative documents
+- [ ] Стилізація додатку
 
 Для розроблення авторизації - https://connections-api.herokuapp.com/docs/#/
 
