@@ -29,6 +29,7 @@ Estimated life cycle - 40 years.
 - [ ] Create a page - Create a report
 - [ ] Create a page - Useful links
 - [ ] Create a page - Normative documents
+- [ ] Refactoring
 - [ ] Стилізація додатку
 
 Для розроблення авторизації - https://connections-api.herokuapp.com/docs/#/
