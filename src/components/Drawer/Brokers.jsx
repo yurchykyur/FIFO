@@ -8,8 +8,9 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
+import { NavLink as RouterNavLink } from 'react-router-dom';
 
-export default function Broker({ nestedList: { primaryTitle, nestedItems } }) {
+export default function Broker({ nestedList: { primaryTitle, nestedItems, nestedLinks } }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -27,13 +28,15 @@ export default function Broker({ nestedList: { primaryTitle, nestedItems } }) {
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {nestedItems.map(text => {
+          {nestedItems.map((text, index) => {
             return (
-              <ListItemButton sx={{ pl: 4 }} key={text}>
+              <ListItemButton sx={{ pl: 4 }} key={text}
+              component={RouterNavLink}
+                        to={nestedLinks[index]}>
                 <ListItemIcon>
                   <StarBorder />
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                   <ListItemText primary={text} />
               </ListItemButton>
             );
           })}
