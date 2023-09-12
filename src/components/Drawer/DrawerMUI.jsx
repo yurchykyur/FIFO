@@ -22,7 +22,6 @@ import Container from '@mui/material/Container';
 import ContentToolbarForDrawer from './ToolbarForDrawer';
 import Broker from './Brokers';
 import Operations from './Operations';
-import BrokerInformation from 'components/BrokerInformation';
 
 import { drawerWidth } from 'constants/drawer';
 import * as myRoute from 'constants/Routes';
@@ -177,7 +176,6 @@ function DrawerMUI(props) {
                 overflow: 'auto',
               }}
             >
-              <BrokerInformation />
               {children}
             </Box>
           </Box>

@@ -16,6 +16,13 @@ import {
   usefullMaterial,
   normative,
 } from 'constants/Routes';
+import FreedomFinance from 'pages/FreedomFinance';
+import InteractiveBrokers from 'pages/InteractiveBrokers';
+import Sell from 'pages/Sell';
+import Buy from 'pages/Buy';
+import GenerateReport from 'pages/GenerateReport';
+import UsefullMaterial from 'pages/UsefullMaterial';
+import Normative from 'pages/Normative';
 
 const App = () => {
   return (
@@ -28,17 +35,14 @@ const App = () => {
 
           <Route path={dashboard} element={<h3>Dashboard</h3>} />
 
-          <Route path={freedomFinance} element={<h3>Freedom Finance</h3>} />
-          <Route
-            path={interactiveBrokers}
-            element={<h3>Interactive Brokers</h3>}
-          />
-          <Route path={buy} element={<h3>Buy</h3>} />
-          <Route path={sell} element={<h3>Sell</h3>} />
+          <Route path={freedomFinance} element={<FreedomFinance />} />
+          <Route path={interactiveBrokers} element={<InteractiveBrokers />} />
+          <Route path={buy} element={<Buy />} />
+          <Route path={sell} element={<Sell />} />
 
-          <Route path={generateReport} element={<h3>Generate a report</h3>} />
-          <Route path={usefullMaterial} element={<h3>Usefull material</h3>} />
-          <Route path={normative} element={<h3>Normative</h3>} />
+          <Route path={generateReport} element={<GenerateReport />} />
+          <Route path={usefullMaterial} element={<UsefullMaterial />} />
+          <Route path={normative} element={<Normative />} />
 
           <Route path="*" element={<h3>NotFound </h3>} />
         </Route>
