@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+
 import {
   TextField,
   Button,
@@ -13,7 +15,7 @@ import {
   Link,
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Link as RouterLink } from 'react-router-dom';
+
 import * as myRoute from 'constants/Routes';
 
 const INITIAL_FORM_STATE = { email: '', password: '', name: '' };

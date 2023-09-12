@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,15 +16,15 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import ListItemText from '@mui/material/ListItemText';
+import Container from '@mui/material/Container';
+
 import ContentToolbarForDrawer from './ToolbarForDrawer';
 import Broker from './Brokers';
 import Operations from './Operations';
 import BrokerInformation from 'components/BrokerInformation';
-import { drawerWidth } from 'constants/drawer';
 
-import { NavLink as RouterNavLink } from 'react-router-dom';
-import ListItemText from '@mui/material/ListItemText';
-import Container from '@mui/material/Container';
+import { drawerWidth } from 'constants/drawer';
 import * as myRoute from 'constants/Routes';
 
 const isLoggedIn = true;

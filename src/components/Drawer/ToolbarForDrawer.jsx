@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { Link as RouterLink } from 'react-router-dom';
-import UserMenu from './UserMenu';
-import AuthNav from './AuthNav';
 import { Link } from '@mui/material';
+
+import AuthNav from './AuthNav';
+import UserMenu from './UserMenu';
+
+import * as myRoute from 'constants/Routes';
 
 function ContentToolbarForDrawer({ isLoggedIn }) {
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -23,7 +27,7 @@ function ContentToolbarForDrawer({ isLoggedIn }) {
         variant="h6"
         noWrap
         component={RouterLink}
-        to="/"
+        to={myRoute.home}
         underline="hover"
         sx={{
           mr: 10,
@@ -41,7 +45,7 @@ function ContentToolbarForDrawer({ isLoggedIn }) {
         variant="h5"
         noWrap
         component={RouterLink}
-        to="/"
+        to={myRoute.home}
         underline="hover"
         sx={{
           mr: 2,

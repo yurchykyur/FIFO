@@ -1,5 +1,7 @@
-import { Box, Link } from '@mui/material';
 import { NavLink as RouterNavLink } from 'react-router-dom';
+
+import { Box, Link } from '@mui/material';
+
 import * as myRoute from 'constants/Routes';
 
 export default function AuthNav() {

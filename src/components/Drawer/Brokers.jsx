@@ -10,7 +10,9 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 
-export default function Broker({ nestedList: { primaryTitle, nestedItems, nestedLinks } }) {
+export default function Broker({
+  nestedList: { primaryTitle, nestedItems, nestedLinks },
+}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -30,13 +32,16 @@ export default function Broker({ nestedList: { primaryTitle, nestedItems, nested
         <List component="div" disablePadding>
           {nestedItems.map((text, index) => {
             return (
-              <ListItemButton sx={{ pl: 4 }} key={text}
-              component={RouterNavLink}
-                        to={nestedLinks[index]}>
+              <ListItemButton
+                sx={{ pl: 4 }}
+                key={text}
+                component={RouterNavLink}
+                to={nestedLinks[index]}
+              >
                 <ListItemIcon>
                   <StarBorder />
                 </ListItemIcon>
-                   <ListItemText primary={text} />
+                <ListItemText primary={text} />
               </ListItemButton>
             );
           })}
