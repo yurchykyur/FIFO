@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link as RouterLink } from 'react-router-dom';
+import * as myRoute from 'constants/Routes';
 
 const INITIAL_FORM_STATE = { email: '', password: '', name: '' };
 
@@ -41,8 +42,6 @@ export default function RegisterForm() {
       alert(JSON.stringify(values, null, 2));
     },
   });
-
-  console.log(formik);
 
   return (
     <Container component="main" maxWidth="xs">
@@ -134,7 +133,7 @@ export default function RegisterForm() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link component={RouterLink} to={'/login'} variant="body2">
+                <Link component={RouterLink} to={myRoute.login} variant="body2">
                   {"Don't have an account? Sign in"}
                 </Link>
               </Grid>

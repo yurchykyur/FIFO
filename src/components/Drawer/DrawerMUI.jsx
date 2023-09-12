@@ -23,11 +23,16 @@ import { drawerWidth } from 'constants/drawer';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import ListItemText from '@mui/material/ListItemText';
 import Container from '@mui/material/Container';
+import * as myRoute from 'constants/Routes';
 
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 // ['Сформувати звіт', 'Корисні відео', 'Нормативи']
-const arrLinks = ['/generate-report', '/usefull-material', '/normative'];
+const arrLinks = [
+  myRoute.generateReport,
+  myRoute.usefullMaterial,
+  myRoute.normative,
+];
 
 function DrawerMUI(props) {
   const { window, children } = props;
@@ -45,7 +50,7 @@ function DrawerMUI(props) {
         nestedList={{
           primaryTitle: 'Брокер',
           nestedItems: ['Freedom Finance', 'Interactive Brokers'],
-          nestedLinks: ['/freedom-finance', '/interactive-brokers'],
+          nestedLinks: [myRoute.freedomFinance, myRoute.interactiveBrokers],
         }}
       />
 
@@ -53,7 +58,7 @@ function DrawerMUI(props) {
         nestedList={{
           primaryTitle: 'Операції',
           nestedItems: ['Купити', 'Продати'],
-          nestedLinks: ['/buy', '/sell'],
+          nestedLinks: [myRoute.buy, myRoute.sell],
         }}
       />
       <Divider />

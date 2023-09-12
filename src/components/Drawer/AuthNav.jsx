@@ -1,5 +1,6 @@
 import { Box, Link } from '@mui/material';
 import { NavLink as RouterNavLink } from 'react-router-dom';
+import * as myRoute from 'constants/Routes';
 
 export default function AuthNav() {
   return (
@@ -14,7 +15,7 @@ export default function AuthNav() {
         variant="body1"
         noWrap
         component={RouterNavLink}
-        to="/"
+        to={myRoute.home}
         sx={{
           mr: 2,
           display: { md: 'flex' },
@@ -30,7 +31,7 @@ export default function AuthNav() {
         variant="body1"
         noWrap
         component={RouterNavLink}
-        to="/login"
+        to={myRoute.login}
         sx={{
           mr: 2,
           display: { md: 'flex' },
@@ -46,7 +47,7 @@ export default function AuthNav() {
         variant="body1"
         noWrap
         component={RouterNavLink}
-        to="/register"
+        to={myRoute.register}
         sx={{
           mr: 2,
           display: { md: 'flex' },
