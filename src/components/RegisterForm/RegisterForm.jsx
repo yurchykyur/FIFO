@@ -49,7 +49,7 @@ export default function RegisterForm() {
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: { xs: 12, md: 20 },
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

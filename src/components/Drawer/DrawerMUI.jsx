@@ -22,6 +22,7 @@ import { drawerWidth } from 'constants/drawer';
 
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import ListItemText from '@mui/material/ListItemText';
+import Container from '@mui/material/Container';
 
 const isLoggedIn = false;
 
@@ -84,21 +85,23 @@ function DrawerMUI(props) {
         position="fixed"
         sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}
       >
-        <Toolbar>
-          {isLoggedIn && (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { lg: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
+        <Container maxWidth="lg">
+          <Toolbar>
+            {isLoggedIn && (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { lg: 'none' } }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
 
-          <ContentToolbarForDrawer isLoggedIn={isLoggedIn} />
-        </Toolbar>
+            <ContentToolbarForDrawer isLoggedIn={isLoggedIn} />
+          </Toolbar>
+        </Container>
       </AppBar>
 
       {isLoggedIn && (

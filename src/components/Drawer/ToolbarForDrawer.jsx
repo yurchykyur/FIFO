@@ -73,7 +73,6 @@ function ContentToolbarForDrawer({ isLoggedIn }) {
           First in - First out
         </Typography>
       </Box>
-
       {isLoggedIn ? (
         <UserMenu
           valueAnchorElUser={anchorElUser}
