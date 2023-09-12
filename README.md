@@ -18,19 +18,33 @@ Estimated life cycle - 40 years.
 - [x] Create a repository
 - [ ] Create routing (was created as open routes)
     - - [x] was created as open routes
-      - [ ] create private routes
+    - - [ ] create private routes
 - [x] Create Layout
 - [x] Creating a login page
 - [x] Creating a registration page
 - [ ] Creating a home page
+    - - [x] template was created 
+    - - [ ] add value 
 - [ ] Creating a page to display information according to the selected broker
+    - - [x] template was created 
+    - - [ ] add value 
 - [ ] Creation of a component displaying detailed information on a market asset
     - вирішити задачу маленького контейнеру для відображення інформації щодо ресурсу - можливо використати інший підхід - **Popper** / **Popover** ?
 - [ ] Сreating a page to sell a market asset
+    - - [x] template was created 
+    - - [ ] add value 
 - [ ] Сreating a page to buy a market asset
+    - - [x] template was created 
+    - - [ ] add value 
 - [ ] Create a page - Create a report
+    - - [x] template was created 
+    - - [ ] add value 
 - [ ] Create a page - Useful links
+    - - [x] template was created 
+    - - [ ] add value 
 - [ ] Create a page - Normative documents
+    - - [x] template was created 
+    - - [ ] add value 
 - [ ] Refactoring
 - [ ] Стилізація додатку
 
