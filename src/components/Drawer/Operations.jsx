@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -8,9 +10,6 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
-import { NavLink as RouterNavLink } from 'react-router-dom';
-
-
 
 export default function Operations({
   nestedList: { primaryTitle, nestedItems, nestedLinks },
@@ -34,13 +33,16 @@ export default function Operations({
         <List component="div" disablePadding>
           {nestedItems.map((text, index) => {
             return (
-              <ListItemButton sx={{ pl: 4 }} key={text}  component={RouterNavLink}
-                        to={nestedLinks[index]}>
+              <ListItemButton
+                sx={{ pl: 4 }}
+                key={text}
+                component={RouterNavLink}
+                to={nestedLinks[index]}
+              >
                 <ListItemIcon>
                   <StarBorder />
                 </ListItemIcon>
-                  <ListItemText primary={text} />
-
+                <ListItemText primary={text} />
               </ListItemButton>
             );
           })}

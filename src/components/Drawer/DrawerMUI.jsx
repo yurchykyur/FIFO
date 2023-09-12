@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,20 +16,25 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
+import ListItemText from '@mui/material/ListItemText';
+import Container from '@mui/material/Container';
+
 import ContentToolbarForDrawer from './ToolbarForDrawer';
 import Broker from './Brokers';
 import Operations from './Operations';
 import BrokerInformation from 'components/BrokerInformation';
+
 import { drawerWidth } from 'constants/drawer';
+import * as myRoute from 'constants/Routes';
 
-import { NavLink as RouterNavLink } from 'react-router-dom';
-import ListItemText from '@mui/material/ListItemText';
-import Container from '@mui/material/Container';
-
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 // ['Сформувати звіт', 'Корисні відео', 'Нормативи']
-const arrLinks = ['/generate-report', '/usefull-material', '/normative'];
+const arrLinks = [
+  myRoute.generateReport,
+  myRoute.usefullMaterial,
+  myRoute.normative,
+];
 
 function DrawerMUI(props) {
   const { window, children } = props;
@@ -45,7 +52,7 @@ function DrawerMUI(props) {
         nestedList={{
           primaryTitle: 'Брокер',
           nestedItems: ['Freedom Finance', 'Interactive Brokers'],
-          nestedLinks: ['/freedom-finance', '/interactive-brokers'],
+          nestedLinks: [myRoute.freedomFinance, myRoute.interactiveBrokers],
         }}
       />
 
@@ -53,7 +60,7 @@ function DrawerMUI(props) {
         nestedList={{
           primaryTitle: 'Операції',
           nestedItems: ['Купити', 'Продати'],
-          nestedLinks: ['/buy', '/sell'],
+          nestedLinks: [myRoute.buy, myRoute.sell],
         }}
       />
       <Divider />
