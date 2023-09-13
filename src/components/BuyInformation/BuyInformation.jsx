@@ -32,7 +32,6 @@ export default function BuyInformation() {
     initialValues: INITIAL_FORM_STATE,
     validationSchema: validationSchema,
     onSubmit: values => {
-      console.log(values);
       alert(JSON.stringify(values, null, 2));
     },
   });

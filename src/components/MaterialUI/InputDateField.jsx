@@ -3,6 +3,9 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import dayjs from 'dayjs';
+
+const tomorrow = dayjs().add(1, 'day');
 
 export default function InputDateField({
   onInputChange,
@@ -54,9 +57,11 @@ export default function InputDateField({
           <DatePicker
             // label="Dash separator"
             value={formikValues[name]}
-            onChange={e => console.log(e.target)}
+            onChange={onInputChange}
             onBlur={onInputBlur}
             format="DD-MM-YYYY"
+            defaultValue={tomorrow}
+            disableFuture
             slotProps={{
               textField: {
                 id: name,
