@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/FIFO/static/css/main.5855c96b.css",
-    "main.js": "/FIFO/static/js/main.dacf1f25.js",
+    "main.js": "/FIFO/static/js/main.f0b25ac3.js",
     "static/js/415.b20c603f.chunk.js": "/FIFO/static/js/415.b20c603f.chunk.js",
     "static/js/687.3bfc2f6e.chunk.js": "/FIFO/static/js/687.3bfc2f6e.chunk.js",
     "static/js/519.96fb70dc.chunk.js": "/FIFO/static/js/519.96fb70dc.chunk.js",
     "static/js/775.328e6c27.chunk.js": "/FIFO/static/js/775.328e6c27.chunk.js",
     "static/js/764.b915ab92.chunk.js": "/FIFO/static/js/764.b915ab92.chunk.js",
     "static/js/851.4b214733.chunk.js": "/FIFO/static/js/851.4b214733.chunk.js",
-    "static/js/44.3df6ed37.chunk.js": "/FIFO/static/js/44.3df6ed37.chunk.js",
+    "static/js/44.14f0b455.chunk.js": "/FIFO/static/js/44.14f0b455.chunk.js",
     "static/js/5.d2d5bfb4.chunk.js": "/FIFO/static/js/5.d2d5bfb4.chunk.js",
     "static/js/956.67372f29.chunk.js": "/FIFO/static/js/956.67372f29.chunk.js",
     "static/js/843.8cdee693.chunk.js": "/FIFO/static/js/843.8cdee693.chunk.js",
@@ -75,14 +75,14 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/FIFO/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/FIFO/index.html",
     "main.5855c96b.css.map": "/FIFO/static/css/main.5855c96b.css.map",
-    "main.dacf1f25.js.map": "/FIFO/static/js/main.dacf1f25.js.map",
+    "main.f0b25ac3.js.map": "/FIFO/static/js/main.f0b25ac3.js.map",
     "415.b20c603f.chunk.js.map": "/FIFO/static/js/415.b20c603f.chunk.js.map",
     "687.3bfc2f6e.chunk.js.map": "/FIFO/static/js/687.3bfc2f6e.chunk.js.map",
     "519.96fb70dc.chunk.js.map": "/FIFO/static/js/519.96fb70dc.chunk.js.map",
     "775.328e6c27.chunk.js.map": "/FIFO/static/js/775.328e6c27.chunk.js.map",
     "764.b915ab92.chunk.js.map": "/FIFO/static/js/764.b915ab92.chunk.js.map",
     "851.4b214733.chunk.js.map": "/FIFO/static/js/851.4b214733.chunk.js.map",
-    "44.3df6ed37.chunk.js.map": "/FIFO/static/js/44.3df6ed37.chunk.js.map",
+    "44.14f0b455.chunk.js.map": "/FIFO/static/js/44.14f0b455.chunk.js.map",
     "5.d2d5bfb4.chunk.js.map": "/FIFO/static/js/5.d2d5bfb4.chunk.js.map",
     "956.67372f29.chunk.js.map": "/FIFO/static/js/956.67372f29.chunk.js.map",
     "843.8cdee693.chunk.js.map": "/FIFO/static/js/843.8cdee693.chunk.js.map",
@@ -94,6 +94,6 @@
   },
   "entrypoints": [
     "static/css/main.5855c96b.css",
-    "static/js/main.dacf1f25.js"
+    "static/js/main.f0b25ac3.js"
   ]
 }
