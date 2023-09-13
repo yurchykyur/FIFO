@@ -1,3 +1,4 @@
+import BuyInformation from 'components/BuyInformation';
 import { Helmet } from 'react-helmet';
 
 export default function Buy() {
@@ -6,7 +7,7 @@ export default function Buy() {
       <Helmet>
         <title>Buy</title>
       </Helmet>
-      <h3>Buy</h3>
+      <BuyInformation />
     </>
   );
 }
