@@ -1,8 +1,5 @@
-import Layout from 'layout';
-import Home from 'pages/Home';
-import Login from 'pages/Login';
-import Register from 'pages/Register';
 import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
 import {
   login,
   home,
@@ -16,13 +13,18 @@ import {
   usefullMaterial,
   normative,
 } from 'constants/Routes';
-import FreedomFinance from 'pages/FreedomFinance';
-import InteractiveBrokers from 'pages/InteractiveBrokers';
-import Sell from 'pages/Sell';
-import Buy from 'pages/Buy';
-import GenerateReport from 'pages/GenerateReport';
-import UsefullMaterial from 'pages/UsefullMaterial';
-import Normative from 'pages/Normative';
+import Layout from 'layout';
+
+const Home = lazy(() => import('pages/Home'));
+const Login = lazy(() => import('pages/Login'));
+const Register = lazy(() => import('pages/Register'));
+const FreedomFinance = lazy(() => import('pages/FreedomFinance'));
+const InteractiveBrokers = lazy(() => import('pages/InteractiveBrokers'));
+const Sell = lazy(() => import('pages/Sell'));
+const Buy = lazy(() => import('pages/Buy'));
+const GenerateReport = lazy(() => import('pages/GenerateReport'));
+const UsefullMaterial = lazy(() => import('pages/UsefullMaterial'));
+const Normative = lazy(() => import('pages/Normative'));
 
 const App = () => {
   return (
