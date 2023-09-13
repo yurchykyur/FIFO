@@ -1,36 +1,38 @@
 import { useFormik } from 'formik';
-import * as yup from 'yup';
 
 import {
-  TextField,
   Button,
   Container,
   CssBaseline,
   Box,
   Avatar,
   Typography,
-  FormControl,
-  Select,
-  MenuItem,
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import SelectBroker from 'components/FormUI/SelectBroker';
+import SelectBroker from 'components/MaterialUI/SelectBroker';
+import { validationSchema } from './validationSchema';
+import InputTextField from 'components/MaterialUI/inputTextField';
+import InputDateField from 'components/MaterialUI/InputDateField';
 
-const INITIAL_FORM_STATE = { broker: '', password: '' };
-
-const validationSchema = yup.object({
-  broker: yup.string('Choose the broker').required('Broker is required'),
-  password: yup
-    .string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
-});
+const INITIAL_FORM_STATE = {
+  broker: '',
+  date: '',
+  ticker: '',
+  quantity: 0,
+  cost: 0,
+  brokerСommission: 0,
+  identifier: '',
+  description: '',
+  stockExchange: '',
+  type: '',
+};
 
 export default function BuyInformation() {
   const formik = useFormik({
     initialValues: INITIAL_FORM_STATE,
     validationSchema: validationSchema,
     onSubmit: values => {
+      console.log(values);
       alert(JSON.stringify(values, null, 2));
     },
   });
@@ -52,7 +54,14 @@ export default function BuyInformation() {
         <Typography component="h1" variant="h5" sx={{ mb: 1 }}>
           Купити
         </Typography>
-        <form onSubmit={formik.handleSubmit} style={{ width: '100%' }}>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            console.log(e.target.elements[2].value);
+            formik.handleSubmit(e);
+          }}
+          style={{ width: '100%' }}
+        >
           <SelectBroker
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
@@ -60,134 +69,95 @@ export default function BuyInformation() {
             formikErrors={formik.errors}
             formikValues={formik.values}
           />
-          <Box
-            sx={{
-              display: 'flex',
-              mt: 1,
-            }}
-          >
-            <Box
-              sx={{
-                width: '30%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography component="p" variant="h6" sx={{}}>
-                Символ
-              </Typography>
-            </Box>
-            <FormControl
-              sx={{
-                width: '70%',
-              }}
-            >
-              {/* <InputLabel id="demo-simple-select-label"></InputLabel> */}
-              <Select
-                labelId="demo-simple-select-label"
-                id="symbol"
-                value={formik.values.symbol}
-                // label="Broker"
-                name="symbol"
-                margin="normal"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.symbol && Boolean(formik.errors.symbol)}
-                helperText={formik.touched.symbol && formik.errors.symbol}
-              >
-                <MenuItem value={'Freedom Finance'}>Freedom Finance</MenuItem>
-                <MenuItem value={'Interactive Brokers'}>
-                  Interactive Brokers
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              mt: 1,
-            }}
-          >
-            <Box
-              sx={{
-                width: '30%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography component="p" variant="h6" sx={{}}>
-                Дата
-              </Typography>
-            </Box>
-            <FormControl
-              sx={{
-                width: '70%',
-              }}
-            >
-              {/* <InputLabel id="demo-simple-select-label"></InputLabel> */}
-              <Select
-                labelId="demo-simple-select-label"
-                id="date"
-                value={formik.values.date}
-                // label="Broker"
-                name="date"
-                margin="normal"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.date && Boolean(formik.errors.date)}
-                helperText={formik.touched.date && formik.errors.date}
-              >
-                <MenuItem value={'Freedom Finance'}>Freedom Finance</MenuItem>
-                <MenuItem value={'Interactive Brokers'}>
-                  Interactive Brokers
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
 
-          <Box
-            sx={{
-              display: 'flex',
-              mt: 1,
-            }}
-          >
-            <Box
-              sx={{
-                width: '30%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography component="p" variant="h6" sx={{}}>
-                Кількість, шт
-              </Typography>
-            </Box>
+          <InputDateField
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Дата купівлі*'}
+            name={'date'}
+          />
 
-            <TextField
-              sx={{
-                width: '70%',
-              }}
-              id="quantity"
-              name="quantity"
-              // label="quantity"
-              margin="normal"
-              variant="outlined"
-              value={formik.values.quantity}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.touched.quantity && Boolean(formik.errors.quantity)}
-              helperText={formik.touched.quantity && formik.errors.quantity}
-            />
-          </Box>
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Символ*'}
+            name={'ticker'}
+          />
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Кількість*, шт.'}
+            name={'quantity'}
+          />
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Вартість*, $'}
+            name={'cost'}
+          />
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Комісія брокера*, $'}
+            name={'brokerСommission'}
+          />
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Ідентифікатор'}
+            name={'identifier'}
+          />
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Опис тікера'}
+            name={'description'}
+          />
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Фондова біржа'}
+            name={'stockExchange'}
+          />
+          <InputTextField
+            onInputChange={formik.handleChange}
+            onInputBlur={formik.handleBlur}
+            formikTouched={formik.touched}
+            formikErrors={formik.errors}
+            formikValues={formik.values}
+            title={'Тип'}
+            name={'type'}
+          />
           <Button
             color="primary"
             variant="contained"
             fullWidth
             type="submit"
-            // disabled={!formik.dirty || !formik.isValid}
+            disabled={!formik.dirty || !formik.isValid}
+            sx={{ mt: 3, width: '75%' }}
           >
             Зберегти
           </Button>

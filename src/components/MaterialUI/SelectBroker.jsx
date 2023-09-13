@@ -19,11 +19,10 @@ export default function SelectBroker({
           width: '30%',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
         }}
       >
         <Typography component="p" variant="h6" sx={{}}>
-          Брокер
+          Брокер*
         </Typography>
       </Box>
       <FormControl
@@ -38,7 +37,6 @@ export default function SelectBroker({
           value={formikValues.broker}
           // label="Broker"
           name="broker"
-          margin="normal"
           onChange={onInputChange}
           onBlur={onInputBlur}
           error={formikTouched.broker && Boolean(formikErrors.broker)}
