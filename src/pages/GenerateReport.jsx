@@ -7,6 +7,9 @@ export default function GenerateReport() {
         <title>Generate a report</title>
       </Helmet>
       <h3>Generate a report</h3>
+      <p>
+        <b>Сторінка на стадії розробки</b>
+      </p>
     </>
   );
 }

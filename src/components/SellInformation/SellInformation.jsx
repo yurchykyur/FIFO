@@ -18,13 +18,9 @@ const INITIAL_FORM_STATE = {
   broker: '',
   date: '',
   ticker: '',
-  quantity: 0,
-  cost: 0,
-  brokerСommission: 0,
-  identifier: '',
-  description: '',
-  stockExchange: '',
-  type: '',
+  quantity: '',
+  cost: '',
+  brokerСommission: '',
 };
 
 export default function BuyInformation() {
@@ -51,7 +47,7 @@ export default function BuyInformation() {
           <ShoppingCartIcon />
         </Avatar>
         <Typography component="h1" variant="h5" sx={{ mb: 1 }}>
-          Інформація про куплений актив
+          Інформація про проданий актив
         </Typography>
         <form
           onSubmit={e => {
@@ -116,46 +112,6 @@ export default function BuyInformation() {
             formikValues={formik.values}
             title={'Комісія брокера*, $'}
             name={'brokerСommission'}
-          />
-
-          <InputTextField
-            onInputChange={formik.handleChange}
-            onInputBlur={formik.handleBlur}
-            formikTouched={formik.touched}
-            formikErrors={formik.errors}
-            formikValues={formik.values}
-            title={'Ідентифікатор'}
-            name={'identifier'}
-          />
-
-          <InputTextField
-            onInputChange={formik.handleChange}
-            onInputBlur={formik.handleBlur}
-            formikTouched={formik.touched}
-            formikErrors={formik.errors}
-            formikValues={formik.values}
-            title={'Опис тікера'}
-            name={'description'}
-          />
-
-          <InputTextField
-            onInputChange={formik.handleChange}
-            onInputBlur={formik.handleBlur}
-            formikTouched={formik.touched}
-            formikErrors={formik.errors}
-            formikValues={formik.values}
-            title={'Фондова біржа'}
-            name={'stockExchange'}
-          />
-
-          <InputTextField
-            onInputChange={formik.handleChange}
-            onInputBlur={formik.handleBlur}
-            formikTouched={formik.touched}
-            formikErrors={formik.errors}
-            formikValues={formik.values}
-            title={'Тип'}
-            name={'type'}
           />
 
           <Button
