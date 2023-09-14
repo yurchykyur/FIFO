@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet';
+import NormativeList from 'components/NormativeList';
 
 export default function Normative() {
   return (
@@ -6,7 +7,7 @@ export default function Normative() {
       <Helmet>
         <title>Normative</title>
       </Helmet>
-      <h3>Normative</h3>
+      <NormativeList />
     </>
   );
 }
