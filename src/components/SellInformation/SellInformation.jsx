@@ -8,15 +8,20 @@ import {
   Avatar,
   Typography,
 } from '@mui/material';
+
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SelectBroker from 'components/MaterialUI/SelectBroker';
 import { validationSchema } from './validationSchema';
 import InputTextField from 'components/MaterialUI/inputTextField';
 import InputDateField from 'components/MaterialUI/InputDateField';
 
+import dayjs from 'dayjs';
+
+const today = dayjs().add(0, 'day');
+
 const INITIAL_FORM_STATE = {
   broker: '',
-  date: '',
+  date: today,
   ticker: '',
   quantity: '',
   cost: '',
@@ -49,14 +54,7 @@ export default function BuyInformation() {
         <Typography component="h1" variant="h5" sx={{ mb: 1 }}>
           Інформація про проданий актив
         </Typography>
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            console.log(e.target.elements[2].value);
-            formik.handleSubmit(e);
-          }}
-          style={{ width: '100%' }}
-        >
+        <form onSubmit={formik.handleSubmit} style={{ width: '100%' }}>
           <SelectBroker
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
@@ -66,10 +64,7 @@ export default function BuyInformation() {
           />
 
           <InputDateField
-            onInputBlur={formik.handleBlur}
-            formikTouched={formik.touched}
-            formikErrors={formik.errors}
-            formikValues={formik.values}
+            formik={formik}
             title={'Дата купівлі*'}
             name={'date'}
           />
