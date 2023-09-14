@@ -64,7 +64,7 @@ function DrawerMUI(props) {
       />
       <Divider />
       <List>
-        {['Сформувати звіт', 'Корисні відео', 'Нормативи'].map(
+        {['Сформувати звіт', 'Корисні матеріали', 'Нормативи'].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton component={RouterNavLink} to={arrLinks[index]}>

@@ -7,6 +7,9 @@ export default function UsefullMaterial() {
         <title>Usefull material</title>
       </Helmet>
       <h3>Usefull material</h3>
+      <p>
+        <b>Сторінка на стадії розробки</b>
+      </p>
     </>
   );
 }
