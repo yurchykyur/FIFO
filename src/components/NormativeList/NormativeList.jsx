@@ -69,7 +69,9 @@ export default function NormativeList() {
               <Typography>{elem.title}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Link href="#">{elem.link}</Link>
+              <Link href={elem.link} target="_blank" rel="noopener">
+                {elem.link}
+              </Link>
               {elem.description?.map((elem, idx) => {
                 return (
                   <div key={nanoid()}>
