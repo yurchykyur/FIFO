@@ -8,7 +8,7 @@ export const validationSchema = yup.object({
       'choose the correct broker'
     )
     .required('Broker is required'),
-  //   date: yup.date().required('Date is required'),
+  date: yup.date().nullable().required('Date is required'),
   ticker: yup.string('Enter your ticker').required('Ticker is required'),
   quantity: yup
     .number('Enter number')

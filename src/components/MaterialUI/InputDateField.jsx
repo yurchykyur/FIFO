@@ -4,18 +4,15 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import dayjs from 'dayjs';
+// import utc from 'dayjs/plugin/utc';
+// import 'dayjs/locale/en';
+// import en from 'date-fns/locale/en';
 
-const tomorrow = dayjs().add(1, 'day');
+// dayjs.extend(utc);
 
-export default function InputDateField({
-  onInputChange,
-  onInputBlur,
-  formikTouched,
-  formikErrors,
-  formikValues,
-  title,
-  name,
-}) {
+console.dir(dayjs);
+
+export default function InputDateField({ formik, title, name }) {
   return (
     <Box
       sx={{
@@ -38,24 +35,12 @@ export default function InputDateField({
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer components={['DatePicker']}>
           <DatePicker
-            // label="Dash separator"
-            value={formikValues[name]}
-            onChange={onInputChange}
-            onBlur={onInputBlur}
+            onBlur={formik.onInputBlur}
             format="DD-MM-YYYY"
-            defaultValue={tomorrow}
             disableFuture
-            slotProps={{
-              textField: {
-                id: name,
-                name: name,
-
-                error: formikTouched[name] && Boolean(formikErrors[name]),
-                helperText: formikTouched[name] && formikErrors[name],
-
-                // helperText: 'Please fill this field'
-              },
-            }}
+            name={name}
+            value={formik.values.date}
+            onChange={value => formik.setFieldValue('date', value)}
           />
         </DemoContainer>
       </LocalizationProvider>
