@@ -35,23 +35,6 @@ export default function InputDateField({
         </Typography>
       </Box>
 
-      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['DatePicker']}>
-          <DatePicker
-            // label="Basic date picker"
-            id={name}
-            name={name}
-            // label="Dash separator"
-            value={formikValues[name]}
-            onChange={e => console.log(e.target)}
-            onBlur={onInputBlur}
-            error={formikTouched[name] && Boolean(formikErrors[name])}
-            helperText={formikTouched[name] && formikErrors[name]}
-            format="DD-MM-YYYY"
-          />
-        </DemoContainer>
-      </LocalizationProvider> */}
-
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer components={['DatePicker']}>
           <DatePicker
@@ -66,8 +49,7 @@ export default function InputDateField({
               textField: {
                 id: name,
                 name: name,
-                // label="Dash separator"
-                // value: formikValues[name],
+
                 error: formikTouched[name] && Boolean(formikErrors[name]),
                 helperText: formikTouched[name] && formikErrors[name],
 

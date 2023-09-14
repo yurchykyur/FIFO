@@ -1,3 +1,4 @@
+import SellInformation from 'components/SellInformation';
 import { Helmet } from 'react-helmet';
 
 export default function Sell() {
@@ -6,7 +7,7 @@ export default function Sell() {
       <Helmet>
         <title>Sell</title>
       </Helmet>
-      <h3>Sell</h3>
+      <SellInformation />
     </>
   );
 }
