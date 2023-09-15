@@ -6,6 +6,7 @@ export default function SelectBroker({
   formikTouched,
   formikErrors,
   formikValues,
+  onInputChangeControll,
 }) {
   return (
     <Box
@@ -37,7 +38,10 @@ export default function SelectBroker({
           value={formikValues.broker}
           // label="Broker"
           name="broker"
-          onChange={onInputChange}
+          onChange={e => {
+            onInputChange(e);
+            onInputChangeControll(e, 'broker');
+          }}
           onBlur={onInputBlur}
           error={formikTouched.broker && Boolean(formikErrors.broker)}
           helperText={formikTouched.broker && formikErrors.broker}

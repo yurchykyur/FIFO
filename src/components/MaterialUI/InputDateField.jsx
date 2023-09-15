@@ -3,16 +3,13 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import dayjs from 'dayjs';
-// import utc from 'dayjs/plugin/utc';
-// import 'dayjs/locale/en';
-// import en from 'date-fns/locale/en';
 
-// dayjs.extend(utc);
-
-console.dir(dayjs);
-
-export default function InputDateField({ formik, title, name }) {
+export default function InputDateField({
+  formik,
+  title,
+  name,
+  onInputChangeControll,
+}) {
   return (
     <Box
       sx={{
@@ -40,7 +37,11 @@ export default function InputDateField({ formik, title, name }) {
             disableFuture
             name={name}
             value={formik.values.date}
-            onChange={value => formik.setFieldValue('date', value)}
+            onChange={value => {
+              formik.setFieldValue(name, value);
+
+              // onInputChangeControll(name, value);
+            }}
           />
         </DemoContainer>
       </LocalizationProvider>
