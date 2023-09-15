@@ -8,6 +8,7 @@ export default function InputTextField({
   formikValues,
   title,
   name,
+  onInputChangeControll,
 }) {
   return (
     <Box
@@ -36,7 +37,10 @@ export default function InputTextField({
         // label="ticker"
         variant="outlined"
         value={formikValues[name]}
-        onChange={onInputChange}
+        onChange={e => {
+          onInputChange(e);
+          onInputChangeControll(e, name);
+        }}
         onBlur={onInputBlur}
         error={formikTouched[name] && Boolean(formikErrors[name])}
         helperText={formikTouched[name] && formikErrors[name]}

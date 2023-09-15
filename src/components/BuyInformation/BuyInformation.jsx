@@ -1,3 +1,5 @@
+import { useSearchParams } from 'react-router-dom';
+
 import { useFormik } from 'formik';
 
 import {
@@ -18,20 +20,22 @@ import dayjs from 'dayjs';
 
 const today = dayjs().add(0, 'day');
 
-const INITIAL_FORM_STATE = {
-  broker: '',
-  date: today,
-  ticker: '',
-  quantity: '',
-  cost: '',
-  brokerСommission: '',
-  identifier: '',
-  description: '',
-  stockExchange: '',
-  type: '',
-};
-
 export default function BuyInformation() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const INITIAL_FORM_STATE = {
+    broker: '',
+    date: today,
+    ticker: '',
+    quantity: '',
+    cost: '',
+    brokerСommission: '',
+    identifier: '',
+    description: '',
+    stockExchange: '',
+    type: '',
+  };
+
   const formik = useFormik({
     initialValues: INITIAL_FORM_STATE,
     validationSchema: validationSchema,
@@ -39,6 +43,16 @@ export default function BuyInformation() {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
+  const handleInputChange = (e, name) => {
+    searchParams.set(name, e.target.value);
+    setSearchParams(searchParams);
+  };
+
+  const handleDatePickerChange = (name, value) => {
+    searchParams.set(name, value);
+    setSearchParams(searchParams);
+  };
 
   return (
     <Container component="main" maxWidth="sm" sx={{ background: '#f3f3be ' }}>
@@ -59,6 +73,7 @@ export default function BuyInformation() {
         </Typography>
         <form onSubmit={formik.handleSubmit} style={{ width: '100%' }}>
           <SelectBroker
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -67,12 +82,14 @@ export default function BuyInformation() {
           />
 
           <InputDateField
+            onInputChangeControll={handleDatePickerChange}
             formik={formik}
             title={'Дата купівлі*'}
             name={'date'}
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -83,6 +100,7 @@ export default function BuyInformation() {
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -93,6 +111,7 @@ export default function BuyInformation() {
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -103,6 +122,7 @@ export default function BuyInformation() {
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -113,6 +133,7 @@ export default function BuyInformation() {
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -123,6 +144,7 @@ export default function BuyInformation() {
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -133,6 +155,7 @@ export default function BuyInformation() {
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
@@ -143,6 +166,7 @@ export default function BuyInformation() {
           />
 
           <InputTextField
+            onInputChangeControll={handleInputChange}
             onInputChange={formik.handleChange}
             onInputBlur={formik.handleBlur}
             formikTouched={formik.touched}
