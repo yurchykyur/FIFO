@@ -30,21 +30,21 @@ Estimated life cycle - 40 years.
     - - [ ] add value 
 - [ ] Creation of a component displaying detailed information on a market asset
     - вирішити задачу маленького контейнеру для відображення інформації щодо ресурсу - можливо використати інший підхід - **Popper** / **Popover** ?
-- [ ] Сreating a page to sell a market asset
+- [x] Сreating a page to sell a market asset
     - - [x] template was created 
-    - - [ ] add value 
-- [ ] Сreating a page to buy a market asset
+    - - [x] add value 
+- [x] Сreating a page to buy a market asset
     - - [x] template was created 
-    - - [ ] add value 
+    - - [x] add value 
 - [ ] Create a page - Create a report
     - - [x] template was created 
     - - [ ] add value 
 - [ ] Create a page - Useful links
     - - [x] template was created 
     - - [ ] add value 
-- [ ] Create a page - Normative documents
+- [x] Create a page - Normative documents
     - - [x] template was created 
-    - - [ ] add value 
+    - - [x] add value 
 - [ ] Refactoring
 - [ ] Стилізація додатку
 
@@ -53,6 +53,7 @@ Estimated life cycle - 40 years.
 2. Backend part
 - [ ] Develop a work plan
 
+3. Logic part
 
 
 
