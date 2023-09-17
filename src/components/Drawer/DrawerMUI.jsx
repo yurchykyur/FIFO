@@ -25,8 +25,7 @@ import Operations from './Operations';
 
 import { drawerWidth } from 'constants/drawer';
 import * as myRoute from 'constants/Routes';
-
-const isLoggedIn = true;
+import { useAuth } from 'hooks';
 
 // ['Сформувати звіт', 'Корисні відео', 'Нормативи']
 const arrLinks = [
@@ -38,6 +37,7 @@ const arrLinks = [
 function DrawerMUI(props) {
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { isLoggedIn } = useAuth();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
