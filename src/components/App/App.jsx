@@ -50,34 +50,40 @@ const App = () => {
             <Route
               path={login}
               element={
-                <RestrictedRoute component={Login} redirectTo={dashboard} />
+                <RestrictedRoute component={<Login />} redirectTo={dashboard} />
               }
             />
             <Route
               path={register}
               element={
-                <RestrictedRoute component={Register} redirectTo={dashboard} />
+                <RestrictedRoute
+                  component={<Register />}
+                  redirectTo={dashboard}
+                />
               }
             />
 
             <Route
               path={dashboard}
               element={
-                <PrivateRoute component={Dashboard} redirectTo={login} />
+                <PrivateRoute component={<Dashboard />} redirectTo={login} />
               }
             />
 
             <Route
               path={freedomFinance}
               element={
-                <PrivateRoute component={FreedomFinance} redirectTo={login} />
+                <PrivateRoute
+                  component={<FreedomFinance />}
+                  redirectTo={login}
+                />
               }
             />
             <Route
               path={interactiveBrokers}
               element={
                 <PrivateRoute
-                  component={InteractiveBrokers}
+                  component={<InteractiveBrokers />}
                   redirectTo={login}
                 />
               }
@@ -85,32 +91,38 @@ const App = () => {
 
             <Route
               path={buy}
-              element={<PrivateRoute component={Buy} redirectTo={login} />}
+              element={<PrivateRoute component={<Buy />} redirectTo={login} />}
             />
 
             <Route
               path={sell}
-              element={<PrivateRoute component={Sell} redirectTo={login} />}
+              element={<PrivateRoute component={<Sell />} redirectTo={login} />}
             />
 
             <Route
               path={generateReport}
               element={
-                <PrivateRoute component={GenerateReport} redirectTo={login} />
+                <PrivateRoute
+                  component={<GenerateReport />}
+                  redirectTo={login}
+                />
               }
             />
 
             <Route
               path={usefullMaterial}
               element={
-                <PrivateRoute component={UsefullMaterial} redirectTo={login} />
+                <PrivateRoute
+                  component={<UsefullMaterial />}
+                  redirectTo={login}
+                />
               }
             />
 
             <Route
               path={normative}
               element={
-                <PrivateRoute component={Normative} redirectTo={login} />
+                <PrivateRoute component={<Normative />} redirectTo={login} />
               }
             />
 
