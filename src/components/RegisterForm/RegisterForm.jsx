@@ -17,6 +17,8 @@ import {
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import * as myRoute from 'constants/Routes';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/operations';
 
 const INITIAL_FORM_STATE = { email: '', password: '', name: '' };
 
@@ -37,11 +39,12 @@ const validationSchema = yup.object({
 });
 
 export default function RegisterForm() {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: INITIAL_FORM_STATE,
     validationSchema: validationSchema,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch(register(values));
     },
   });
 

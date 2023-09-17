@@ -9,6 +9,9 @@ import {
 } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 
+import { useDispatch } from 'react-redux';
+import { logOut } from 'redux/auth/operations';
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Choose theme'];
 
 function stringAvatar(name) {
@@ -45,6 +48,12 @@ export default function UserMenu({
   onCloseUserMenu,
   valueAnchorElUser,
 }) {
+  const dispatch = useDispatch();
+
+  const handleClickLogOut = () => {
+    dispatch(logOut());
+  };
+
   return (
     <>
       <Box sx={{}}>
@@ -92,7 +101,7 @@ export default function UserMenu({
             </MenuItem>
           ))}
         </Menu>
-        <IconButton aria-label="logout">
+        <IconButton aria-label="logout" onClick={handleClickLogOut}>
           <LogoutIcon sx={{ color: '#f39fad' }} />
         </IconButton>
       </Box>
