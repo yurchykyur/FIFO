@@ -1,4 +1,4 @@
-import { logOut, login, register } from './operations';
+import { logOut, login, refreshUser, register } from './operations';
 
 const { createSlice } = require('@reduxjs/toolkit');
 
@@ -44,6 +44,17 @@ const authSlice = createSlice({
       })
       .addCase(logOut.rejected, state => {
         return state;
+      })
+      .addCase(refreshUser.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshUser.rejected, state => {
+        state.isRefreshing = false;
       }),
 });
 
