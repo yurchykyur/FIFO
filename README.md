@@ -16,9 +16,9 @@ Estimated life cycle - 40 years.
 1. Front-end part
 - [x] Prepare a site template in figma (During development, refinements will be required)
 - [x] Create a repository
-- [ ] Create routing (was created as open routes)
+- [x] Create routing (was created as open routes)
     - - [x] was created as open routes
-    - - [ ] create private routes
+    - - [x] create private routes
 - [x] Create Layout
 - [x] Creating a login page
 - [x] Creating a registration page
