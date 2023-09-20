@@ -11,6 +11,10 @@ Who will be the first user? - I will.
 
 Estimated life cycle - 40 years.
 
+## Планова структура проекту
+
+[Посилання](https://www.canva.com/design/DAFvAzuQjtM/sRtanG6WJqN0f64Yw6oTBQ/edit?utm_content=DAFvAzuQjtM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 ## Plan of work
 
 1. Front-end part
